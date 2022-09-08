@@ -182,7 +182,7 @@ class UserServiceImplTest {
 
     @Test
     void findUserByEmail() {
-        when(userRepository.findUserByEmail("enwerevincent@gmail.com")).thenReturn(Optional.ofNullable(user));
-        assertEquals(user , userService.findUserByEmail("enwerevincent@gmail.com"));
+        when(userRepository.findUserByEmail("thelmaozougwu@gmail.com")).thenReturn(Optional.ofNullable(user));
+        assertEquals(user , userService.findUserByEmail("thelmaozougwu@gmail.com"));
     }
 }
