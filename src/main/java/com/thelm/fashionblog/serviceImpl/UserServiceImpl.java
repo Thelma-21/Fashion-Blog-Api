@@ -58,13 +58,13 @@ public class UserServiceImpl implements UserService {
     public LoginResponse login(LoginDto loginDto) {
         User user = findUserByEmail(loginDto.getEmail());
         LoginResponse loginResponse = null;
-        if(user != null){
-            if(user.getPassword().equals(loginDto.getPassword())){
-                loginResponse = new LoginResponse("success", LocalDateTime.now());
-            }else {
+        if(user != null && user.getPassword().equals(loginDto.getPassword())) {
+
+            loginResponse = new LoginResponse("success", LocalDateTime.now());
+        } else {
                 loginResponse = new LoginResponse("password mismatch", LocalDateTime.now());
             }
-        }
+
         return loginResponse;
     }
 
